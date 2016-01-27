@@ -8,3 +8,4 @@ base:
     - term
     - users
     - bash
+    - networktools
