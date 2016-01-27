@@ -1,5 +1,6 @@
 zsh:
-    pkg.installed
+    pkg.installed:
+      - name: zsh
 
 /root/.zshrc:
   file.managed:
