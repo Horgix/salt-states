@@ -1,6 +1,7 @@
 networktools_pkgs:
   pkg.installed:
     - pkgs:
-      - openbsd-netcat
-      - tcpdump
-      - net-tools
+      - openbsd-netcat  # netcat
+      - tcpdump         # tcpdump
+      - net-tools       # netstat
+      - bind-tools      # dig
