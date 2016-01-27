@@ -1,6 +1,6 @@
 git:
-    pkg.installed:
-      - name: git
+  pkg.installed:
+    - name: git
 
 /root/.gitconfig:
   file.managed:

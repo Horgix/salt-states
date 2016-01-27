@@ -1,3 +1,3 @@
 urxvt.terminfo.pkg:
-    pkg.installed:
-      - name: rxvt-unicode-terminfo
+  pkg.installed:
+    - name: rxvt-unicode-terminfo

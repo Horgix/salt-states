@@ -1,3 +1,3 @@
 root:
-    user.present:
-       - shell: /bin/zsh 
+  user.present:
+    - shell: /bin/zsh
