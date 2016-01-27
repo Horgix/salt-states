@@ -1,7 +1,6 @@
 base:
   'salara.be':
     - git
-      #- locale
     - shell
     - zsh
     - vim
@@ -9,3 +8,4 @@ base:
     - users
     - bash
     - networktools
+    #- locale
