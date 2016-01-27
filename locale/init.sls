@@ -1,5 +1,6 @@
-python2-dbus:
-  pkg.installed
+pydbus.pkg:
+  pkg.installed:
+    - name: python2-dbus
 
 locale_present:
   locale.present:

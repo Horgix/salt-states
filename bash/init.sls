@@ -2,17 +2,19 @@ bash.pkg:
   pkg.installed:
     - name: bash
 
-/root/.bashrc:
+bashrc.file:
   file.managed:
+    - name:   /root/.bashrc
     - source: salt://bash/bashrc
-    - mode: 0644
-    - user: root
-    - group: root
+    - mode:   0644
+    - user:   root
+    - group:  root
 
-/root/.bash:
+bash.directory:
   file.recurse:
-    - source: salt://bash/bash
-    - dir_mode: 0755
-    - file_mode: 0644
-    - user: root
-    - group: root
+    - name:       /root/.bash
+    - source:     salt://bash/bash
+    - dir_mode:   0755
+    - file_mode:  0644
+    - user:       root
+    - group:      root

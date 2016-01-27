@@ -1,4 +1,4 @@
-networktools.pkg:
+networktools.pkgs:
   pkg.installed:
     - pkgs:
       - openbsd-netcat
