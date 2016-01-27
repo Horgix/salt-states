@@ -1,3 +1,7 @@
+bash.pkg:
+  pkg.installed:
+    - name: bash
+
 /root/.bashrc:
   file.managed:
     - source: salt://bash/bashrc
