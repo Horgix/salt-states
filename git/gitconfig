@@ -1,0 +1,34 @@
+# HGXonf
+# by Alexis 'Horgix' Chotard
+# https://bitbucket.org/Horgix/
+
+# .gitconfig for GIT
+# Basic global git configuration
+
+[user]
+  name = Alexis 'Horgix' Chotard
+  email = alexis.horgix.chotard@gmail.com
+
+[http]
+  postBuffer = 524288000
+
+[color]
+  ui = true
+
+[alias]
+  pu = push origin master
+  po = pull --rebase
+  st = status
+  co = checkout
+  cm = commit
+  c = commit -e
+  au = add -u
+  l = log
+  prettylog = log --decorate=full --graph
+  pl = prettylog
+  poule = po
+
+[push]
+  default = simple
+
+# EOF
