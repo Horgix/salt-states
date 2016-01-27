@@ -1,8 +1,8 @@
-vim.pkg:
+vim_pkg:
   pkg.installed:
     - name: vim
 
-vimrc.file:
+vimrc_file:
   file.managed:
     - name:   /root/.vimrc
     - source: salt://vim/vimrc
@@ -10,7 +10,7 @@ vimrc.file:
     - user:   root
     - group:  root
 
-vim.directory:
+vim_directory:
   file.recurse:
     - name:       /root/.vim
     - source:     salt://vim/vim

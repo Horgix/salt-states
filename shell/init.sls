@@ -1,4 +1,4 @@
-shell-config.directory:
+shell_config_directory:
   file.recurse:
     - name:       /root/.shell-config
     - source:     salt://shell/shell-config

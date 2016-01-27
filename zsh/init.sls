@@ -1,8 +1,8 @@
-zsh.pkg:
+zsh_pkg:
   pkg.installed:
     - name: zsh
 
-zshrc.file:
+zshrc_file:
   file.managed:
     - name:   /root/.zshrc
     - source: salt://zsh/zshrc
@@ -10,7 +10,7 @@ zshrc.file:
     - user:   root
     - group:  root
 
-zsh.directory:
+zsh_directory:
   file.recurse:
     - name:       /root/.zsh
     - source:     salt://zsh/zsh

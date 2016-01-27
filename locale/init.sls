@@ -1,4 +1,4 @@
-pydbus.pkg:
+pydbus_pkg:
   pkg.installed:
     - name: python2-dbus
 

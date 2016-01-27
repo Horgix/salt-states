@@ -1,8 +1,8 @@
-bash.pkg:
+bash_pkg:
   pkg.installed:
     - name: bash
 
-bashrc.file:
+bashrc_file:
   file.managed:
     - name:   /root/.bashrc
     - source: salt://bash/bashrc
@@ -10,7 +10,7 @@ bashrc.file:
     - user:   root
     - group:  root
 
-bash.directory:
+bash_directory:
   file.recurse:
     - name:       /root/.bash
     - source:     salt://bash/bash

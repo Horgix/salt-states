@@ -1,8 +1,8 @@
-git.pkg:
+git_pkg:
   pkg.installed:
     - name: git
 
-gitconfig.file:
+gitconfig_file:
   file.managed:
     - name:   /root/.gitconfig
     - source: salt://git/gitconfig
