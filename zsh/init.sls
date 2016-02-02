@@ -1,20 +1,23 @@
 zsh_pkg:
   pkg.installed:
-    - name: zsh
+    - name: {{ pillar['pkgs']['zsh'] }}
 
-zshrc_file:
+{% for user in salt['pillar.get']('users', [])
+  if user['zsh_conf'] is defined and user['zsh_conf'] %}
+{{ user['name'] }}_zshrc_file:
   file.managed:
-    - name:   /root/.zshrc
+    - name:   {{ salt['user.info'](user['name'])['home'] }}/.zshrc
     - source: salt://zsh/zshrc
     - mode:   0644
-    - user:   root
-    - group:  root
+    - user:   {{ user['name'] }}
+    - group:  {{ user['name'] }}
 
-zsh_directory:
+{{ user['name'] }}_zsh_directory:
   file.recurse:
-    - name:       /root/.zsh
+    - name:       {{ salt['user.info'](user['name'])['home'] }}/.zsh
     - source:     salt://zsh/zsh
     - dir_mode:   0755
     - file_mode:  0644
-    - user:       root
-    - group:      root
+    - user:       {{ user['name'] }}
+    - group:      {{ user['name'] }}
+{% endfor %}
