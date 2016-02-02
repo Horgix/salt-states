@@ -1,4 +1,6 @@
-root_user:
+{% for user in pillar['users'] %}
+{{ user['name'] }}_user:
   user.present:
-    - name:   root
+    - name:   {{ user['name'] }}
     - shell:  /bin/zsh
+{% endfor %}
