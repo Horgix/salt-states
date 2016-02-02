@@ -1,6 +1,6 @@
 bash_pkg:
   pkg.installed:
-    - name: bash
+    - name: {{ pillar['pkgs']['bash'] }}
 
 bashrc_file:
   file.managed:

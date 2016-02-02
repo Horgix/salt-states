@@ -1,6 +1,6 @@
 pydbus_pkg:
   pkg.installed:
-    - name: python2-dbus
+    - name: {{ pillar['pkgs']['python2-dbus'] }}
 
 locale_present:
   locale.present:

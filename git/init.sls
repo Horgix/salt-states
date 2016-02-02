@@ -1,6 +1,6 @@
 git_pkg:
   pkg.installed:
-    - name: git
+    - name: {{ pillar['pkgs']['git'] }}
 
 gitconfig_file:
   file.managed:

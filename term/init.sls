@@ -1,3 +1,3 @@
 urxvt_terminfo_pkg:
   pkg.installed:
-    - name: rxvt-unicode-terminfo
+    - name: {{ pillar['pkgs']['urxvt-terminfo'] }}

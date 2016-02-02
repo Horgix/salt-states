@@ -1,6 +1,6 @@
 vim_pkg:
   pkg.installed:
-    - name: vim
+    - name: {{ pillar['pkgs']['vim'] }}
 
 vimrc_file:
   file.managed:
