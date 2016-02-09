@@ -9,3 +9,4 @@ base:
     - bash
     - networktools
     #- locale
+    - docker
