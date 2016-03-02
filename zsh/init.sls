@@ -1,9 +1,12 @@
-zsh_pkg:
+{% for user,user_props in pillar['users'].iteritems()
+  if user_props['shell'] is defined and user_props['shell'] == 'zsh' %}
+
+zsh_{{ user }}_pkg:
   pkg.installed:
     - name: {{ pillar['pkgs']['zsh'] }}
 
-{% for user,user_props in pillar['users'].iteritems()
-  if user_props['zsh_conf'] is defined and user_props['zsh_conf'] %}
+{% if user_props['zsh_conf'] is defined and user_props['zsh_conf'] %}
+
 {{ user }}_zshrc_file:
   file.managed:
     - name:   {{ salt['user.info'](user)['home'] }}/.zshrc
@@ -20,4 +23,6 @@ zsh_pkg:
     - file_mode:  0644
     - user:       {{ user }}
     - group:      {{ user }}
+
+{% endif %}
 {% endfor %}
