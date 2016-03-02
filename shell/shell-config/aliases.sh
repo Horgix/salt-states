@@ -89,4 +89,4 @@ pssh () {
 }
 
 alias ssh='TERM=rxvt ssh'
-
+alias irc='tmux attach -t irc'
