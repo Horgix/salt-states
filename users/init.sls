@@ -2,13 +2,11 @@
 {{ user }}_user:
   user.present:
     - name:   {{ user }}
-    - shell:  /bin/zsh
-    {% if user_props['sudoer'] is defined and user_props['sudoer'] %}
-    - groups:
-      - wheel
+    {% if user_props['shell'] is defined %}
+    - shell:  /bin/{{ user_props['shell'] }}
     {% endif %}
-    {% if user_props['dockerer'] is defined and user_props['dockerer'] %}
     - groups:
-      - docker
+    {% if user_props['sudoer'] is defined and user_props['sudoer'] %}
+      - wheel
     {% endif %}
 {% endfor %}
