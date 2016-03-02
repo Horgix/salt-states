@@ -1,5 +1,5 @@
 base:
-  'salara.be':
+  '*.horgix.fr':
     - git
     - shell
     - zsh
@@ -8,5 +8,6 @@ base:
     - users
     - bash
     - networktools
-    #- locale
+    - systemtools
+  'pelargir.horgix.fr':
     - docker
