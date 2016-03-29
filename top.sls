@@ -9,5 +9,6 @@ base:
     - bash
     - networktools
     - systemtools
+    - sudo
   'pelargir.horgix.fr':
     - docker
