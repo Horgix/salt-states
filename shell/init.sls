@@ -9,3 +9,4 @@
     - user:       {{ user }}
     - group:      {{ user }}
 {% endfor %}
+# TODO : fix that user.info thing
