@@ -10,5 +10,8 @@ base:
     - networktools
     - systemtools
     - sudo
+    - ssh
   'pelargir.horgix.fr':
     - docker
+  'edoras.horgix.fr':
+    - lxc
