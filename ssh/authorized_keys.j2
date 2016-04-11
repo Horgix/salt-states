@@ -1,0 +1,4 @@
+{% for keyid, key in ssh_keys.iteritems() %}
+# {{ keyid }}
+ssh-rsa {{ key }} {{ keyid }}
+{% endfor %}
