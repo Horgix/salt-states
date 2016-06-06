@@ -1,10 +1,13 @@
-lxc_pkg:
+lxc_pkgs:
   pkg.installed:
-    - name: {{ pillar['pkgs']['lxc'] }}
+    - pkgs:
+      {% for pkg in pillar['pkgs']['lxctools'] %}
+      - {{ pillar['pkgs'][pkg] }}
+      {% endfor %}
 
 lxc_service:
   service.running:
     - name:     lxc
     - enable:   True
     - require:
-      - pkg: {{ pillar['pkgs']['lxc'] }}
+      - pkg: lxc_pkgs
