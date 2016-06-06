@@ -8,3 +8,6 @@
       - wheel
     {% endif %}
 {% endfor %}
+
+include:
+  - .shell
