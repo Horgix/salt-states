@@ -1,12 +1,11 @@
 base:
   '*.horgix.fr':
+    - base
     - git
     - shell
     - vim
     - term
     - users
-    - networktools
-    - systemtools
     - sudo
     - ssh
   'pelargir.horgix.fr':
