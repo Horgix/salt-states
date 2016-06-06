@@ -16,7 +16,7 @@
 {{ user }}_{{ shell_to_setup }}rc_file:
   file.managed:
     - name:   {{ salt['user.info'](user)['home'] }}/.{{ shell_to_setup }}rc
-    - source: salt://users/{{ shell_to_setup }}rc
+    - source: salt://users/files/{{ shell_to_setup }}rc
     - mode:   0644
     - user:   {{ user }}
     - group:  {{ user }}
@@ -24,7 +24,7 @@
 {{ user }}_{{ shell_to_setup }}_directory:
   file.recurse:
     - name:       {{ salt['user.info'](user)['home'] }}/.{{ shell_to_setup }}
-    - source:     salt://users/{{ shell_to_setup }}
+    - source:     salt://users/files/{{ shell_to_setup }}
     - dir_mode:   0755
     - file_mode:  0644
     - user:       {{ user }}
