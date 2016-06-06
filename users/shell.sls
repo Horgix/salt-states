@@ -29,7 +29,16 @@
     - file_mode:  0644
     - user:       {{ user }}
     - group:      {{ user }}
-{% endif %}
+  {% endif %}
+
+{{ user }}_shell_config_directory:
+  file.recurse:
+    - name:       {{ salt['user.info'](user)['home'] }}/.shell-config
+    - source:     salt://users/files/shell-config
+    - dir_mode:   0755
+    - file_mode:  0644
+    - user:       {{ user }}
+    - group:      {{ user }}
   # Finally, install needed shells
   {% if loop.last %}
 # Yes, I want this debugging for something so ugly
