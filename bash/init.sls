@@ -1,17 +1,32 @@
 # Please Jinja, allow list comprehension, this ugliness makes me sad :(
-{% set should_install_bash = False %}
+# WTF we can't use set() either...
+
+# So... we start building the list of shells to install
+{% set shells_to_install = [] %}
+# For each user and its properties
 {% for user, user_props in pillar['users'].items() -%}
-  {% if user_props['shell'] is defined -%}
-    {% if user_props['shell'] == 'bash' -%}
-      {% set should_install_bash = True %}
-    {%- endif -%}
-    {% if loop.last -%}
-      {% if should_install_bash %}
-bash_pkg:
+  # Add his/her shell to the ones to install
+  {% if user_props['shell'] is defined
+     and not user_props['shell'] in shells_to_install %}
+      {% do shells_to_install.append(user_props['shell']) %}
+  {%- endif %}
+  # Finally, do concrete stuff.
+  {% if loop.last %}
+# Yes, I want this debugging for something so ugly
+printpkgs:
+  cmd.run:
+    - name: "echo Shells to be installed: {{ shells_to_install }}"
+    # If no shell is defined, still install bash
+    {% if not shells_to_install %}
+      {% do shells_to_install.append('bash') %}
+    {% endif %}
+    # Install shells
+    {% for shell in shells_to_install %}
+{{ shell }}_pkg:
   pkg.installed:
-    - name: {{ pillar['pkgs']['bash'] }}
-      {%- endif %}
-    {%- endif %}
+    - name: {{ pillar['pkgs'][shell] }}
+    {% endfor %}
+    # TODO : uninstall shells that we don't
   {%- endif %}
 {%- endfor %}
 
