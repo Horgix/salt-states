@@ -3,7 +3,6 @@ base:
     - base
     - users
     - git
-    - vim
     - term
     - sudo
     - ssh
