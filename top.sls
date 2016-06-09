@@ -2,7 +2,6 @@ base:
   '*.horgix.fr':
     - base
     - users
-    - git
     - term
     - sudo
     - ssh
