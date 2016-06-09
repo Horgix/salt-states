@@ -12,3 +12,4 @@
 include:
   - .shell
   - .vim
+  - .git
