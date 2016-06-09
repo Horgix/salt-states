@@ -1,6 +1,6 @@
-{% if grains['os'] == 'Fedora' %}
 # On Fedora, add the official Docker Repository
 # ... the official packaged version is full of WTF
+{% if grains['os'] == 'Fedora' %}
 docker_repo:
   pkgrepo.managed:
     - name:       docker
