@@ -12,6 +12,13 @@ systemtools_pkgs:
       - {{ pillar['pkgs'][pkg] }}
       {% endfor %}
 
+basictools_plgs:
+  pkg.installed:
+    - pkgs:
+      {% for pkg in pillar['pkgs']['basictools'] %}
+      - {{ pillar['pkgs'][pkg] }}
+      {% endfor %}
+
 vim_pkg:
   pkg.installed:
     - name: {{ pillar['pkgs']['vim'] }}
