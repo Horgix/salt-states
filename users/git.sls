@@ -9,8 +9,8 @@
     - group:  {{ user }}
     - template: jinja
     - defaults:
-      fullname: user_props['fullname']
-      email: user_props['email']
+      fullname: {{ user_props['fullname'] }}
+      email: {{ user_props['email'] }}
     - require:
       - user: {{ user }}
   {% endif %}
