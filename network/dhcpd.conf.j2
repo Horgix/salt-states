@@ -1,0 +1,30 @@
+# option definitions common to all supported networks...
+option domain-name "horgix.fr";
+option domain-name-servers {{ ', '.join(dns) }};
+
+default-lease-time 600;
+max-lease-time 7200;
+
+# If this DHCP server is the official DHCP server for the local
+# network, the authoritative directive should be uncommented.
+authoritative;
+
+# Use this to send dhcp log messages to a different log file (you also
+# have to hack syslog.conf to complete the redirection).
+log-facility local7;
+
+# No service will be given on this subnet, but declaring it helps the
+# DHCP server to understand the network topology.
+
+# 163.172.39.139/24
+subnet 163.172.39.0 netmask 255.255.255.0 {
+}
+
+# 10.91.134.70/24
+subnet 10.91.134.0 netmask 255.255.255.0 {
+}
+
+subnet 192.168.42.0 netmask 255.255.255.0 {
+  range 192.168.42.2 192.168.42.254;
+  option routers 192.168.42.1;
+}

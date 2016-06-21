@@ -1,0 +1,19 @@
+ {% set properties = pillar['network']['interfaces'][interface] -%}
+# Interface
+Description='{{ properties['desc'] }}'
+Interface={{ interface }}
+Connection={{ properties['kind'] }}
+{% if properties['kind'] == 'bridge' and 'childs' in properties %}
+DHCPClient=dhcpcd
+BindsToInterfaces=({{ ','.join(properties['childs']) }})
+{% endif %}
+# Connection
+IP6=no
+{% if 'ip' not in properties -%}
+IP=no
+{% else -%}
+IP={{ properties['ip'] }}
+{% if properties['ip'] == 'static' %}
+Address=({{ ','.join(properties['addresses']) }})
+{% endif %}
+{% endif %}
