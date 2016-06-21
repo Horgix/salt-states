@@ -1,0 +1,4 @@
+lxc.network.type = veth
+lxc.network.flags = up
+lxc.network.script.up = {{ ovsup_path }}
+lxc.network.script.down = {{ ovsdown_path }}
