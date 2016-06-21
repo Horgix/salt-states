@@ -23,3 +23,9 @@ vim_pkg:
   pkg.installed:
     - name: {{ pillar['pkgs']['vim'] }}
 
+{% if salt['pillar.get']('dediboxserial', False) %}
+getty_service:
+  service.running:
+    - name:     getty@ttyS1
+    - enable:   True
+{% endif %}
