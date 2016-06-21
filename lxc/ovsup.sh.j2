@@ -1,0 +1,16 @@
+#! /bin/bash
+
+# LXC passes five parameters to the script when it is called:
+# 1. The name of the container
+# 2. The configuration section of the container’s configuration (“net” in this
+# case)
+# 3. Either “up” or “down”, depending on which configuration option is calling
+# the script (lxc.network.script.up passes “up”, lxc.network.script.down passes
+# “down”)
+# 4. The type of networking (“veth” in this case)
+# 5. The name of the interface (randomly generated unless there is an
+# lxc.network.veth.peer included in the container’s configuration)
+
+ovs-vsctl --may-exist add-br '{{ bridge }}'
+ovs-vsctl --if-exists del-port '{{ bridge }}' $5
+ovs-vsctl --may-exist add-port '{{ bridge }}' $5
