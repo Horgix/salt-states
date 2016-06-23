@@ -6,4 +6,3 @@
     - name:     {{ service }}
     - enable:   False
 {% endfor %}
-

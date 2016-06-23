@@ -42,10 +42,10 @@
   # Finally, install needed shells
   {% if loop.last %}
 # Yes, I want this debugging for something so ugly
-printpkgs:
-  cmd.run:
-    - name: "echo Shells to be installed: {{ shells_to_install }}"
-    # Install shells
+#printpkgs:
+#  cmd.run:
+#    - name: "echo Shells to be installed: {{ shells_to_install }}"
+#    # Install shells
     {% for shell in shells_to_install %}
 {{ shell }}_pkg:
   pkg.installed:
