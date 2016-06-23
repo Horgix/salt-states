@@ -7,7 +7,7 @@
       {% endfor %}
 {% endfor %}
 
-{% if salt['pillar.get']('dediboxserial', False) %}
+{% if salt['pillar.get']('dedibox_serial_console', False) %}
 getty_service:
   service.running:
     - name:     getty@ttyS1
