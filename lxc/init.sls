@@ -63,7 +63,4 @@ lxc_ovsdown:
 include:
   - .dhcpd
 
-# /run/systemd/resolve/resolv.conf to /etc/resolv.conf
-# salt-cloud
-# libnacl
 # Enable IP forward
