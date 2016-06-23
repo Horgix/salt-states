@@ -63,15 +63,7 @@ lxc_ovsdown:
 include:
   - .dhcpd
 
-# Down : netctl, remove NetworkManager, down network
-# Up systemd-networkd systemd-resolved
 # /run/systemd/resolve/resolv.conf to /etc/resolv.conf
-# disable dhcpcd
-
-
 # salt-cloud
 # libnacl
-
 # Enable IP forward
-# conf dhcpd and enable
-#
