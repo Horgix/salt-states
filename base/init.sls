@@ -1,27 +1,11 @@
-networktools_pkgs:
+{% for toolclass in ['system', 'network', 'basic'] %}
+{{ toolclass }}_tools_pkgs:
   pkg.installed:
     - pkgs:
-      {% for pkg in pillar['pkgs']['networktools'] %}
+      {% for pkg in pillar['pkgs'][toolclass + '_tools'] %}
       - {{ pillar['pkgs'][pkg] }}
       {% endfor %}
-
-systemtools_pkgs:
-  pkg.installed:
-    - pkgs:
-      {% for pkg in pillar['pkgs']['systemtools'] %}
-      - {{ pillar['pkgs'][pkg] }}
-      {% endfor %}
-
-basictools_plgs:
-  pkg.installed:
-    - pkgs:
-      {% for pkg in pillar['pkgs']['basictools'] %}
-      - {{ pillar['pkgs'][pkg] }}
-      {% endfor %}
-
-vim_pkg:
-  pkg.installed:
-    - name: {{ pillar['pkgs']['vim'] }}
+{% endfor %}
 
 {% if salt['pillar.get']('dediboxserial', False) %}
 getty_service:
