@@ -19,7 +19,10 @@ netctl_service:
       interface: {{ interface }}
 
 {{ inteface }}_netctl_enable:
-  ln -s '/etc/systemd/system/netctl@brwlan.service' '/etc/systemd/system/multi-user.target.wants/netctl@brwlan.service'
-
-
+  file.symlink:
+    - name: /etc/systemd/system/multi-user.target.wants/netctl@{{ interface }}.service
+    - target: /etc/systemd/system/netctl@{{ interface }}.service
+    - mode:   0755
+    - user:   root
+    - group:  root
 {% endfor %}
