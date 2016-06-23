@@ -68,5 +68,7 @@ lxc_ovsdown:
 
 # salt-cloud
 # libnacl
-# symlink /usr/bin/lxc-copy
-#ln -s /usr/bin/lxc-copy /usr/local/bin/lxc-clone
+
+# Enable IP forward
+# conf dhcpd and enable
+#
