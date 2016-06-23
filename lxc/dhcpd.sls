@@ -6,7 +6,7 @@ dhcpd_pkg:
 dhcpd_conf:
   file.managed:
     - name:   /etc/dhcpd.conf
-    - source: salt://network/dhcpd.conf.j2
+    - source: salt://lxc/dhcpd.conf.j2
     - mode:   0644
     - user:   root
     - group:  root
