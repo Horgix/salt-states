@@ -60,6 +60,9 @@ lxc_ovsdown:
     - defaults:
       bridge: {{ salt['pillar.get']('lxc:network:ovs:bridge') }}
 
+include:
+  - .dhcpd
+
 # Down : netctl, remove NetworkManager, down network
 # Up systemd-networkd systemd-resolved
 # /run/systemd/resolve/resolv.conf to /etc/resolv.conf

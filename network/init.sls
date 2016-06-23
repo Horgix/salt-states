@@ -17,18 +17,9 @@ netctl_service:
     - template: jinja
     - defaults:
       interface: {{ interface }}
+
+{{ inteface }}_netctl_enable:
+  ln -s '/etc/systemd/system/netctl@brwlan.service' '/etc/systemd/system/multi-user.target.wants/netctl@brwlan.service'
+
+
 {% endfor %}
-
-dhcpd_conf:
-  file.managed:
-    - name:   /etc/dhcpd.conf
-    - source: salt://network/dhcpd.conf.j2
-    - mode:   0644
-    - user:   root
-    - group:  root
-    - template: jinja
-    - defaults:
-      dns: {{ pillar['network']['dns'] }}
-
-# TODO : enable profiles needed
-# TODO : package dhcp + service
