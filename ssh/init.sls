@@ -2,14 +2,14 @@
 {% if 'ssh_keys' in user_props %}
 {{ user }}_sshdir:
   file.directory:
-    - name:   {{ salt['user.info'](user)['home'] }}/.ssh
+    - name:   {{ user_props['home'] }}/.ssh
     - mode:   0700
     - user:   {{ user }}
     - group:  {{ user }}
 
 {{ user }}_authorized_keys:
   file.managed:
-    - name:   {{ salt['user.info'](user)['home'] }}/.ssh/authorized_keys
+    - name:   {{ user_props['home'] }}/.ssh/authorized_keys
     - source: salt://ssh/authorized_keys.j2
     - mode:   0644
     - user:   {{ user }}

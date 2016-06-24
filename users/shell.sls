@@ -15,7 +15,7 @@
   {% if user_props[shell_to_setup + '_conf'] is defined and user_props[shell_to_setup + '_conf'] %}
 {{ user }}_{{ shell_to_setup }}rc_file:
   file.managed:
-    - name:   {{ salt['user.info'](user)['home'] }}/.{{ shell_to_setup }}rc
+    - name:   {{ user_props['home'] }}/.{{ shell_to_setup }}rc
     - source: salt://users/files/{{ shell_to_setup }}rc
     - mode:   0644
     - user:   {{ user }}
@@ -23,7 +23,7 @@
 
 {{ user }}_{{ shell_to_setup }}_directory:
   file.recurse:
-    - name:       {{ salt['user.info'](user)['home'] }}/.{{ shell_to_setup }}
+    - name:       {{ user_props['home'] }}/.{{ shell_to_setup }}
     - source:     salt://users/files/{{ shell_to_setup }}
     - dir_mode:   0755
     - file_mode:  0644
@@ -33,7 +33,7 @@
 
 {{ user }}_shell_config_directory:
   file.recurse:
-    - name:       {{ salt['user.info'](user)['home'] }}/.shell-config
+    - name:       {{ user_props['home'] }}/.shell-config
     - source:     salt://users/files/shell-config
     - dir_mode:   0755
     - file_mode:  0644
