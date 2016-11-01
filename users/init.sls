@@ -13,3 +13,4 @@ include:
   - .shell
   - .vim
   - .git
+  - .xconf

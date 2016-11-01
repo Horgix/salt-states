@@ -1,0 +1,69 @@
+! urxvt.xconf for X11
+! URXVT configuration
+
+! ==================
+!   Global Settings
+! ==================
+
+!  - pseudo transparency
+URxvt*shading:              20
+URxvt*inheritPixmap:        true
+!URxvt*transparent:          true
+!URxvt*tintColor:            #AAAAAA
+
+! - Default geometry in number of characters : [colums]x[lines]
+URxvt*geometry:             80x30
+
+! - Fonts
+URxvt*font:                 xft:Inconsolata,FontAwesome:size=13
+URxvt*boldfont:             xft:Inconsolata:bold:size=14
+!URxvt.boldItalicFont:       xft:DejaVu Sans Mono:italic:size=10
+!URxvt*font:                 xft:Iconsolata:size=14
+
+! - Scroll Bar
+URxvt*saveLines:            100000
+URxvt*scrollBar:            false
+
+! ==============
+!     Colors
+! ==============
+
+! -- Background color
+URxvt*background:           black
+! -- Foreground color
+URxvt*foreground:           white
+! - Cursor color
+URxvt*cursorColor:          #DCDCCC
+
+
+! - 8/16 Colors
+
+URxvt*color0: #101010
+URxvt*color1: #f13a21
+URxvt*color2: #93f91d
+URxvt*color3: #ffd00a
+URxvt*color4: #004f9e
+URxvt*color5: #ec0048
+URxvt*color6: #2aa7e7
+URxvt*color7: #f2f2f2
+URxvt*color8: #1d202f
+URxvt*color9: #ff361e
+URxvt*color10: #ffc005
+URxvt*color11: #93ff00
+URxvt*color12: #0071ff
+URxvt*color13: #ef0051
+URxvt*color14: #4bb8fd
+URxvt*color15: #a020f0
+
+! Options/Scripts
+
+! URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select
+! URxvt.url-launcher: /usr/bin/firefox
+! ! URxvt.matcher.button: 1
+! URxvt.url-select.underline: true
+! URxvt.keysym.M-u:           perl:url-select:select_next
+! URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+! URxvt.keysym.M-s:           perl:keyboard-select:search
+
+
+! EOF
