@@ -9,6 +9,7 @@ base:
     - docker
   'edoras.horgix.fr':
     - lxc
+    - docker
     - network
   '*':
     - base
