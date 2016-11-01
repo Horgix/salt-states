@@ -14,8 +14,24 @@ docker_repo:
 docker_pkg:
   pkg.installed:
     - name: {{ pillar['pkgs']['docker'] }}
+    {% if grains['os'] == 'Fedora' -%}
     - require:
       - pkgrepo: docker
+    {% endif %}
+
+{% if grains['os'] == 'Fedora' %}
+docker_compose:
+  file.managed:
+    - name:   /usr/local/sbin/docker-compose
+    - source: salt://docker/docker-compose.sh
+    - mode:   0755
+    - user:   root
+    - group:  root
+{% elif grains['os'] == 'Arch' %}
+docker_compose:
+  pkg.installed:
+    - name: {{ pillar['pkgs']['docker-compose'] }}
+{% endif %}
 
 docker_service:
   service.running:
@@ -23,4 +39,3 @@ docker_service:
     - enable:   True
     - require:
       - pkg: {{ pillar['pkgs']['docker'] }}
-
