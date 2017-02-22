@@ -13,4 +13,6 @@ include:
   - .shell
   - .vim
   - .git
+  {% if 'workstation' in grains['roles'] %}
   - .xconf
+  {% endif %}
