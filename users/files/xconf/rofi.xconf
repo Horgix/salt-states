@@ -1,0 +1,40 @@
+rofi.modi:                 run,ssh,window,script:~/.myscripts/rofi-pass
+! Theme
+rofi.opacity:              30
+rofi.width:                100
+rofi.lines:                5
+rofi.columns:              1
+rofi.font:                 Inconsolata 12
+rofi.color-enabled:       true
+! State:                  'bg',     'fg',     'bgalt',  'hlbg',   'hlfg'
+rofi.color-normal:        #111111,  #ffffff,  #222222,  #005577,  #ffffff
+rofi.color-urgent:        #fdf6e3,  #dc322f,  #fdf6e3,  #dc322f,  #fdf6e3
+rofi.color-active:        #fdf6e3,  #268bc2,  #fdf6e3,  #268bd2,  #fdf6e3
+!                         'background', 'border'
+rofi.color-window:        #111111,      #ffffff
+
+rofi.bw:                   1
+rofi.location:             1
+rofi.padding:              5
+rofi.yoffset:              0
+rofi.xoffset:              0
+rofi.fixed-num-lines:      false
+rofi.terminal:             i3-sensible-terminal
+rofi.ssh-client:           ssh
+rofi.ssh-command:          {terminal} -e {ssh-client} {host}
+rofi.run-command:          {cmd}
+rofi.run-list-command:
+rofi.run-shell-command:    {terminal} -e {cmd}
+rofi.disable-history:      true
+rofi.levenshtein-sort:     true
+rofi.case-sensitive:       false
+rofi.sidebar-mode:         false
+rofi.lazy-filter-limit:    5000
+rofi.eh:                   1
+rofi.auto-select:          false
+rofi.parse-hosts:          false
+rofi.combi-modi:           window,run
+rofi.pid:                  /run/user/1000/rofi.pid
+rofi.key-window:           F12
+rofi.key-run:              F11
+rofi.key-ssh:              F10
