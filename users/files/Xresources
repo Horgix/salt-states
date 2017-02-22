@@ -1,0 +1,5 @@
+! .Xresources for X
+! ! Loads each file for X configuration
+
+#include ".xconf/urxvt.xconf"
+#include ".xconf/rofi.xconf"
