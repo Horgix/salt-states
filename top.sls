@@ -1,19 +1,17 @@
 base:
-  '*.horgix.fr':
-    - base
-    - users
-    - term
-    - sudo
-    - ssh
-  'pelargir.horgix.fr':
-    - docker
-  'edoras.horgix.fr':
-    - lxc
-    - docker
-    - network
   '*':
     - base
     - users
-    - term
     - sudo
     - ssh
+  #'edoras.horgix.fr':
+  #  - network
+  #'roles:docker_host':
+  #  - match: grain
+  #  - docker
+  #'roles:lxc_host':
+  #  - match: grain
+  #  - lxc
+  'roles:workstation':
+    - match: grain
+    - workstation
