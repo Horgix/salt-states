@@ -7,6 +7,10 @@
       {% endfor %}
 {% endfor %}
 
+urxvt_terminfo_pkg:
+  pkg.installed:
+    - name: {{ pillar['pkgs']['urxvt-terminfo'] }}
+
 {% if salt['pillar.get']('dedibox_serial_console', False) %}
 getty_service:
   service.running:
