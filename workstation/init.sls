@@ -22,3 +22,11 @@ i3lock_pkg:
 #  pkg.installed:
 #    - name: {{ pillar['pkgs']['py3status'] }}
 {% endif %}
+
+keymap_script:
+  file.managed:
+    - name:   /usr/local/bin/keymap.sh
+    - source: salt://workstation/files/keymap.sh
+    - mode:   0755
+    - user:   root
+    - group:  root
