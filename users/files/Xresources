@@ -1,5 +1,6 @@
 ! .Xresources for X
-! ! Loads each file for X configuration
+! Loads each file for X configuration
 
-#include ".xconf/urxvt.xconf"
-#include ".xconf/rofi.xconf"
+! FIXME - go back to tilde expansion instead of hardcoding this
+#include "/home/horgix/.xconf/urxvt.xconf"
+#include "/home/horgix/.xconf/rofi.xconf"
