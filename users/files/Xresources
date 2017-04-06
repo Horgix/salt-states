@@ -4,3 +4,5 @@
 ! FIXME - go back to tilde expansion instead of hardcoding this
 #include "/home/horgix/.xconf/urxvt.xconf"
 #include "/home/horgix/.xconf/rofi.xconf"
+
+Xcursor.size:  16
