@@ -91,3 +91,4 @@ pssh () {
 alias ssh='TERM=rxvt ssh'
 alias irc='tmux attach -t irc'
 alias ip='ip -c'
+alias ssha='ssh-agent -t 12h | grep -v echo > ~/.ssh/ssh_${HOST}_${USER}.agent && source ~/.ssh/ssh_${HOST}_${USER}.agent && ssh-add'
