@@ -13,6 +13,6 @@ include:
   - .shell
   - .vim
   - .git
-  {% if 'workstation' in grains['roles'] %}
+  {% if grains['roles'] is defined and 'workstation' in grains['roles'] %}
   - .xconf
   {% endif %}
