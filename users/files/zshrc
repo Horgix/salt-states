@@ -32,3 +32,10 @@ if [ -e ~/.ssh/ssh_${HOST}_${USER}.agent ]; then
 fi
 
 source /usr/share/fzf/key-bindings.zsh
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /var/cache/pacman/pkg/nodejs-serverless2542/nodejs-serverless/pkg/nodejs-serverless/usr/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /var/cache/pacman/pkg/nodejs-serverless2542/nodejs-serverless/pkg/nodejs-serverless/usr/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /var/cache/pacman/pkg/nodejs-serverless2542/nodejs-serverless/pkg/nodejs-serverless/usr/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /var/cache/pacman/pkg/nodejs-serverless2542/nodejs-serverless/pkg/nodejs-serverless/usr/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
