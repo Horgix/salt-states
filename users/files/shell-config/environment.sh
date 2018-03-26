@@ -45,3 +45,7 @@ export GOPATH=/home/horgix/work/godev
 
 # https://www.packer.io/docs/other/environment-variables.html#checkpoint_disable
 export CHECKPOINT_DISABLE=1
+
+export ORTHANC_ID=79849
+export BARADDUR_ID=79889
+export MINASMORGUL_ID=79945

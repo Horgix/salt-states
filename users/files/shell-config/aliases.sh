@@ -98,6 +98,3 @@ alias ssha='ssh-agent -t 12h | grep -v echo > ~/.ssh/ssh_${HOST}_${USER}.agent &
 alias marathonctl='docker run -it --rm shoenig/marathonctl:latest'
 alias utf8arrow='echo →'
 
-export ORTHANC_ID=79849
-export BARADDUR_ID=79889
-export MINASMORGUL_ID=79945
