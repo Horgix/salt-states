@@ -94,16 +94,6 @@ function prompt_load_default_colors()
     COL_PROMPT=$PR_BLUE     # Prompt color
 }
 
-function prompt_load_avalon_colors()
-{
-    COL_SYSINFOS=$PR_GREEN  # SYSINFOS Color
-    COL_WD=$PR_BLUE         # Working Directory Color
-    COL_INFOS=$PR_YELLOW    # Color of secondary Infos (separator, date, etc)
-    COL_LINES=$PR_GREEN     # Global Color (Lines, etc)
-    COL_TIME=$PR_CYAN       # Hour color
-    COL_PROMPT=$PR_BLUE     # Prompt color
-}
-
 function prompt_load_colors ()
 {
     # See if we can use colors.
@@ -119,11 +109,7 @@ function prompt_load_colors ()
     PR_NO_COLOR="%{$terminfo[sgr0]%}"
 
     # Set the colors depending on the hostname
-    if [ $HOST = "avalon" ]; then
-        prompt_load_avalon_colors
-    else
-        prompt_load_default_colors
-    fi
+    prompt_load_default_colors
 }
 
 # Stuff that only needs to be set once (when a new instance of zsh is ran)
