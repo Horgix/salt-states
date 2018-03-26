@@ -101,3 +101,5 @@ alias utf8arrow='echo →'
 alias gcloud='docker run --rm -ti -v gcloud-config:/root/.config -v gcloud-kube:/root/.kube google/cloud-sdk gcloud'
 alias gkube='docker run --rm -ti -v gcloud-config:/root/.config -v gcloud-kube:/root/.kube -v `pwd`:/app -w /app google/cloud-sdk kubectl'
 alias gke-proxy='docker run --rm -ti -p 8001:8001 -v gcloud-config:/root/.config -v gcloud-kube:/root/.kube google/cloud-sdk kubectl proxy --address="0.0.0.0"'
+
+alias updaaaaaate='echo "$ sudo pacman -Syu" && sudo pacman -Syu'
