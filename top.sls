@@ -15,3 +15,6 @@ base:
   'roles:workstation':
     - match: grain
     - workstation
+  'orthanc.horgix.fr,baraddur.horgix.fr,minasmorgul.horgix.fr':
+    - match: list
+    - docker
