@@ -98,3 +98,6 @@ alias ssha='ssh-agent -t 12h | grep -v echo > ~/.ssh/ssh_${HOST}_${USER}.agent &
 alias marathonctl='docker run -it --rm shoenig/marathonctl:latest'
 alias utf8arrow='echo →'
 
+alias gcloud='docker run --rm -ti -v gcloud-config:/root/.config -v gcloud-kube:/root/.kube google/cloud-sdk gcloud'
+alias gkube='docker run --rm -ti -v gcloud-config:/root/.config -v gcloud-kube:/root/.kube -v `pwd`:/app -w /app google/cloud-sdk kubectl'
+alias gke-proxy='docker run --rm -ti -p 8001:8001 -v gcloud-config:/root/.config -v gcloud-kube:/root/.kube google/cloud-sdk kubectl proxy --address="0.0.0.0"'
