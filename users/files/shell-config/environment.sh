@@ -42,3 +42,6 @@ export SMILEUSER=alcho
 FZF_CTRL_R_OPTS="--reverse"
 
 export GOPATH=/home/horgix/work/godev
+
+# https://www.packer.io/docs/other/environment-variables.html#checkpoint_disable
+export CHECKPOINT_DISABLE=1
