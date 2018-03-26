@@ -32,9 +32,9 @@ function precmd ()
     # ${([flags])[varname]} uses the flags to alter how the value of the
     # variable is handled. The percent sign causes prompt expansion to be done
     # on the variable.
-    local SYSINFOS_len=${#${(%):-$SYSINFOS_FULL}}
-    local WD_len=${#${(%):-$WD}}
-    local WD_FULL_len=${#${(%):-$WD_FULL}}
+    local SYSINFOS_len={% raw %}${#${(%):-$SYSINFOS_FULL}}{% endraw %}
+    local WD_len={% raw %}${#${(%):-$WD}}{% endraw %}
+    local WD_FULL_len={% raw %}${#${(%):-$WD_FULL}}{% endraw %}
 
     # Truncates the path if it's too long to hold on a single line
 
@@ -152,10 +152,10 @@ function prompt_setprompt ()
     RET="%(?..[%?]%s~)"
 
     # HOUR formated HOUR:MINUTES
-    TIME="%D{%H:%M}"
+    TIME={% raw %}"%D{%H:%M}"{% endraw %}
 
     # DATE formated
-    DATE="%D{%a,%b} %D{%d}"
+    DATE={% raw %}"%D{%a,%b} %D{%d}"{% endraw %}
 
     # (e) flag : cause a variable to undergo variable substitution
     export PROMPT='
