@@ -40,3 +40,5 @@ export SCREENSHOTS=/home/horgix/screenshots/
 export SMILEUSER=alcho
 
 FZF_CTRL_R_OPTS="--reverse"
+
+export GOPATH=/home/horgix/work/godev
