@@ -89,7 +89,7 @@ function prompt_load_default_colors()
     COL_SYSINFOS=$PR_CYAN   # SYSINFOS Color
     COL_WD=$PR_BLUE         # Working Directory Color
     COL_INFOS=$PR_YELLOW    # Color of secondary Infos (separator, date, etc)
-    COL_LINES=$PR_CYAN      # Global Color (Lines, etc)
+    COL_LINES=$PR_{{ zsh_prompt_color }}      # Global Color (Lines, etc)
     COL_TIME=$PR_GREEN      # Hour color
     COL_PROMPT=$PR_BLUE     # Prompt color
 }
