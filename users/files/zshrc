@@ -31,4 +31,4 @@ if [ -e ~/.ssh/ssh_${HOST}_${USER}.agent ]; then
   source ~/.ssh/ssh_${HOST}_${USER}.agent
 fi
 
-# EOF
+source /usr/share/fzf/key-bindings.zsh
