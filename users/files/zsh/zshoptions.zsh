@@ -19,6 +19,8 @@ setopt numericglobsort
 setopt recexact
 setopt aliases
 
+autoload -U edit-command-line
+
 # PUSHD options
 
 ## Keeps the directory stack from getting too large
