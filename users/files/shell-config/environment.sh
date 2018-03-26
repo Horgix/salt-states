@@ -39,4 +39,4 @@ export PATH=$HOME/.myscripts:$HOME/docker-helpers:$PATH
 export SCREENSHOTS=/home/horgix/screenshots/
 export SMILEUSER=alcho
 
-# EOF
+FZF_CTRL_R_OPTS="--reverse"
