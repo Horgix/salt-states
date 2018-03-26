@@ -17,3 +17,8 @@ getty_service:
     - name:     getty@ttyS1
     - enable:   True
 {% endif %}
+
+timesyncd_service:
+  service.running:
+    - name:     systemd-timesyncd
+    - enable:   True
