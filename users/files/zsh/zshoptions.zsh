@@ -17,6 +17,7 @@ setopt multios
 setopt notify
 setopt numericglobsort
 setopt recexact
+setopt aliases
 
 # PUSHD options
 
