@@ -29,6 +29,11 @@
     - file_mode:  0644
     - user:       {{ user }}
     - group:      {{ user }}
+    {% if shell_to_setup == 'zsh' %}
+    - template: jinja
+    - defaults:
+      zsh_prompt_color: {{ pillar['zsh_prompt_color']|default('CYAN') }}
+    {% endif %}
   {% endif %}
 
 {{ user }}_shell_config_directory:
