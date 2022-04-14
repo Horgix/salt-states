@@ -7,11 +7,11 @@
 {% for user, user_props in pillar['users'].items() -%}
   # If no shell is defined, say it's bash
   {% set shell_to_setup = salt['pillar.get']('users:' + user + ':shell', pillar['default_shell']) %}
-  # Add his/her shell to the ones to install
+  # Add their shell to the ones to install
   {% if not shell_to_setup in shells_to_install %}
     {% do shells_to_install.append(shell_to_setup) %}
   {%- endif %}
-  # Configure his/her shell
+  # Configure their shell
   {% if user_props[shell_to_setup + '_conf'] is defined and user_props[shell_to_setup + '_conf'] %}
 {{ user }}_{{ shell_to_setup }}rc_file:
   file.managed:
