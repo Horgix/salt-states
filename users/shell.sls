@@ -44,6 +44,14 @@
     - file_mode:  0644
     - user:       {{ user }}
     - group:      {{ user }}
+
+{{ user }}_p10k_file:
+  file.managed:
+    - name:   {{ user_props['home'] }}/.p10k.zsh
+    - source: salt://users/files/p10k
+    - mode:   0644
+    - user:   {{ user }}
+    - group:  {{ user }}
   # Finally, install needed shells
   {% if loop.last %}
 # Yes, I want this debugging for something so ugly
