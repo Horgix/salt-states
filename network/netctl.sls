@@ -1,7 +1,7 @@
 netctl_service:
   service.running:
     - name:     netctl
-    - enable:   True
+    - enable:   False
 
 {% for interface in pillar['network']['interfaces'] %}
 {{ interface }}_netctl_profile:
