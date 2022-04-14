@@ -15,4 +15,5 @@ include:
   - .git
   {% if grains['roles'] is defined and 'workstation' in grains['roles'] %}
   - .xconf
+  - .i3
   {% endif %}
