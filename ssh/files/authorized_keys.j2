@@ -1,4 +1,4 @@
-{% for keyid, key in ssh_keys.items() %}
+{% for keyid, keydetails in ssh_keys.items() %}
 # {{ keyid }}
-ssh-rsa {{ key }} {{ keyid }}
+ssh-{{ keydetails['kind'] }} {{ keydetails['pubkey'] }} {{ keyid }}
 {% endfor %}
