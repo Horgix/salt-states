@@ -1,5 +1,4 @@
 {% for user, user_props in pillar['users'].items() -%}
-  {% if salt['pillar.get']('users:' + user + ':x_conf', False) %}
 {{ user }}_i3_config:
   file.recurse:
     - name:   {{ user_props['home'] }}/.config/i3
@@ -10,5 +9,4 @@
     - group:  {{ user }}
     - require:
       - user: {{ user }}
-  {% endif %}
 {% endfor %}
