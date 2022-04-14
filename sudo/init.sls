@@ -6,7 +6,6 @@ sudo_{{ user }}_pkg:
 {% endif %}
 {% endfor %}
 
-# TODO : improve this
 sudoers_file:
   file.managed:
     - name:   /etc/sudoers
