@@ -1,4 +1,4 @@
-{% for user, user_props in pillar['users'].iteritems() %}
+{% for user, user_props in pillar['users'].items() %}
 {% if user_props['sudoer'] is defined and user_props['sudoer'] %}
 sudo_{{ user }}_pkg:
   pkg.installed:

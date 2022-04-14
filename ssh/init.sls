@@ -1,4 +1,4 @@
-{% for user, user_props in pillar['users'].iteritems() %}
+{% for user, user_props in pillar['users'].items() %}
 {% if 'ssh_keys' in user_props %}
 {{ user }}_sshdir:
   file.directory:

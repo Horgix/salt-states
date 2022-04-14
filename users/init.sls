@@ -1,4 +1,4 @@
-{% for user, user_props in pillar['users'].iteritems() %}
+{% for user, user_props in pillar['users'].items() %}
 {{ user }}_user:
   user.present:
     - name:   {{ user }}
