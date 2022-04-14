@@ -1,6 +1,6 @@
 {% set wm = pillar['wm'] %}
 {{ wm }}_pkg:
-  pkg.group_installed:
+  pkg.installed:
     - name: {{ pillar['pkgs'][wm] }}
 
 workstation_tools_pkgs:
