@@ -22,5 +22,7 @@ for xfile in $sysresources $sysmodmap $userresource $usermodmap; do
   fi
 done
 
+# TODO: stop hardcoding that
+export TERMINAL=alacritty
 # TODO: template that
 exec i3
