@@ -21,14 +21,4 @@
     - group:  {{ user }}
     - require:
       - user: {{ user }}
-
-{{ user }}_xresources:
-  file.managed:
-    - name:   {{ user_props['home'] }}/.Xresources
-    - source: salt://users/files/Xresources
-    - mode:   0644
-    - user:   {{ user }}
-    - group:  {{ user }}
-    - require:
-      - user: {{ user }}
 {% endfor %}
